@@ -63,7 +63,7 @@ const ResumeInput: React.FC<Props> = ({ type = 'text', label, path, className, m
         renderInput={(params) => <TextField {...params} error={false} className={className} />}
         onChange={(date: Date | null, keyboardInputValue: string | undefined) => {
           isEmpty(keyboardInputValue) && onChangeValue('');
-          date && dayjs(date).utc().isValid() && onChangeValue(dayjs(date).utc().toISOString());
+          date && dayjs(date).utc().isValid() && onChangeValue(dayjs(date).add(1, 'day').utc().toISOString());
         }}
       />
     );
